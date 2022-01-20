@@ -1,0 +1,755 @@
+
+ Prog 06080
+
+ 161606 Date : 25.07.18 08:07:41  LC : B  IQ : 00
+      Lat1 : 36.918S  Lon1 :  53.871W  Lat2 : 36.918S  Lon2 :  53.871W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -135 dB
+      Pass duration : 045s   NOPC : 3
+      Calcul freq : 401 677390.1 Hz   Altitude :    0 m
+              35           09           57          235
+              32           54          127          139
+              16           00           00
+
+ 161606 Date : 25.07.18 09:49:03  LC : A  IQ : 00
+      Lat1 : 36.934S  Lon1 :  53.416W  Lat2 : 36.934S  Lon2 :  53.416W
+      Nb mes : 003  Nb mes>-120dB : 001  Best level : -118 dB
+      Pass duration : 092s   NOPC : 3
+      Calcul freq : 401 677408.1 Hz   Altitude :    0 m
+              74           22           89          233
+              42          142           00           00
+              00           00           00           00
+              00           24           00
+
+ 161606 Date : 25.07.18 13:41:24  LC : B  IQ : 08
+      Lat1 : 36.851S  Lon1 :  53.781W  Lat2 : 36.851S  Lon2 :  53.781W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -132 dB
+      Pass duration : 188s   NOPC : 2
+      Calcul freq : 401 677425.2 Hz   Altitude :    0 m
+              32          248           41          246
+              54           00           00           23
+             246          214           06          136
+              04           64           63
+
+ 161606 Date : 25.07.18 19:34:42  LC : 1  IQ : 58
+      Lat1 : 36.978S  Lon1 :  53.817W  Lat2 : 36.978S  Lon2 :  53.817W
+      Nb mes : 004  Nb mes>-120dB : 000  Best level : -121 dB
+      Pass duration : 133s   NOPC : 3
+      Calcul freq : 401 677409.4 Hz   Altitude :    0 m
+              55          118           73          240
+              12          132           00           00
+              00           00           00           00
+              00           00           00           64
+              00           00           00
+
+ 161606 Date : 25.07.18 23:52:36  LC : B  IQ : 08
+      Lat1 : 36.991S  Lon1 :  53.865W  Lat2 : 36.991S  Lon2 :  53.865W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -135 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677413.0 Hz   Altitude :    0 m
+              20          253          249          236
+             110           00           00           39
+             130          135          142           17
+              21           82          251           34
+             132          131           11
+
+ 161606 Date : 26.07.18 01:22:36  LC : B  IQ : 08
+      Lat1 : 37.017S  Lon1 :  53.875W  Lat2 : 37.017S  Lon2 :  53.875W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -125 dB
+      Pass duration : 045s   NOPC : 3
+      Calcul freq : 401 677406.1 Hz   Altitude :    0 m
+              91           24           14          148
+              36          145          151           19
+              22           04          125          159
+             255          253           51          131
+              99           47           97
+
+ 161606 Date : 26.07.18 06:54:33  LC : B  IQ : 08
+      Lat1 : 37.064S  Lon1 :  53.942W  Lat2 : 37.064S  Lon2 :  53.942W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -131 dB
+      Pass duration : 000s   NOPC : 2
+      Calcul freq : 401 677410.2 Hz   Altitude :    0 m
+              18           65          249          229
+              46           00           00          151
+             129           04           06           06
+             135          142          146          162
+             143           13          125          128
+              00           00           00
+
+ 161606 Date : 26.07.18 08:56:49  LC : A  IQ : 08
+      Lat1 : 37.026S  Lon1 :  53.826W  Lat2 : 37.026S  Lon2 :  53.826W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -130 dB
+      Pass duration : 186s   NOPC : 3
+      Calcul freq : 401 677412.1 Hz   Altitude :    0 m
+              60          130           41          242
+             107          130           00           00
+              00           96           96           00
+              00           00           04
+
+ 161606 Date : 26.07.18 20:14:15  LC : B  IQ : 08
+      Lat1 : 37.065S  Lon1 :  53.778W  Lat2 : 37.065S  Lon2 :  53.778W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -129 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677415.4 Hz   Altitude :    0 m
+              40          125          233          233
+              32           54          117          157
+             161           00           00
+
+ 161606 Date : 26.07.18 21:41:46  LC : A  IQ : 08
+      Lat1 : 37.016S  Lon1 :  53.849W  Lat2 : 37.016S  Lon2 :  53.849W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -129 dB
+      Pass duration : 229s   NOPC : 3
+      Calcul freq : 401 677416.1 Hz   Altitude :    0 m
+              56          239          217          231
+              38          134           00           00
+              00          161          116
+
+ 161606 Date : 27.07.18 01:03:30  LC : B  IQ : 08
+      Lat1 : 37.005S  Lon1 :  53.870W  Lat2 : 37.005S  Lon2 :  53.870W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -126 dB
+      Pass duration : 047s   NOPC : 3
+      Calcul freq : 401 677406.6 Hz   Altitude :    0 m
+              37           17          137          244
+             192           53          114          148
+              00           00           00
+
+ 161606 Date : 27.07.18 01:38:43  LC : B  IQ : 08
+      Lat1 : 37.003S  Lon1 :  53.865W  Lat2 : 37.003S  Lon2 :  53.865W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -124 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677409.2 Hz   Altitude :    0 m
+              49           39          137          244
+              12          130           00           00
+              00           00           00           00
+              00           00           00           56
+              00           00           00
+
+ 161606 Date : 27.07.18 06:41:46  LC : B  IQ : 08
+      Lat1 : 37.010S  Lon1 :  53.849W  Lat2 : 37.010S  Lon2 :  53.849W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -133 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677420.6 Hz   Altitude :    0 m
+              57           50           25          239
+              44          131           00           00
+              00           00           64           00
+              00           00           00           48
+              00           00           00
+
+ 161606 Date : 27.07.18 10:09:57  LC : B  IQ : 08
+      Lat1 : 37.011S  Lon1 :  53.873W  Lat2 : 37.011S  Lon2 :  53.873W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -132 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677407.7 Hz   Altitude :    0 m
+              55           72          201          236
+             192           75          131           00
+              08           00           00           00
+             192           00           00
+
+ 161606 Date : 27.07.18 12:19:11  LC : B  IQ : 08
+      Lat1 : 37.036S  Lon1 :  53.862W  Lat2 : 37.036S  Lon2 :  53.862W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -130 dB
+      Pass duration : 045s   NOPC : 2
+      Calcul freq : 401 677414.4 Hz   Altitude :    0 m
+              22          245          121          235
+              43           00           00           21
+             129          132           07          136
+             138           35          235           20
+              00           00           00
+
+ 161606 Date : 27.07.18 13:04:38  LC : B  IQ : 08
+      Lat1 : 37.038S  Lon1 :  53.863W  Lat2 : 37.038S  Lon2 :  53.863W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -122 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677420.0 Hz   Altitude :    0 m
+              04           01          246          209
+              04           06           27           49
+             214          212           80           20
+             200          236           67          253
+              84           00           66          109
+              64           00           00
+
+ 161606 Date : 27.07.18 22:29:04  LC : B  IQ : 08
+      Lat1 : 37.046S  Lon1 :  53.893W  Lat2 : 37.046S  Lon2 :  53.893W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -135 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677423.8 Hz   Altitude :    0 m
+              53          212          169          242
+              07          130           00           00
+              00           96           64          128
+              00           00           00
+
+ 161606 Date : 28.07.18 01:25:50  LC : B  IQ : 08
+      Lat1 : 36.982S  Lon1 :  53.885W  Lat2 : 36.982S  Lon2 :  53.885W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -126 dB
+      Pass duration : 046s   NOPC : 3
+      Calcul freq : 401 677418.1 Hz   Altitude :    0 m
+              36           51          233          239
+              32           54          114           38
+             130           00           00
+
+ 161606 Date : 28.07.18 03:01:48  LC : B  IQ : 08
+      Lat1 : 36.978S  Lon1 :  53.927W  Lat2 : 36.978S  Lon2 :  53.927W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -130 dB
+      Pass duration : 090s   NOPC : 2
+      Calcul freq : 401 677423.0 Hz   Altitude :    0 m
+              27          150           57          238
+             110           00           00          147
+             129           03          134           06
+              05          140          140          140
+              13           11          241
+
+ 161606 Date : 28.07.18 06:38:38  LC : A  IQ : 08
+      Lat1 : 36.959S  Lon1 :  53.959W  Lat2 : 36.959S  Lon2 :  53.959W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -131 dB
+      Pass duration : 092s   NOPC : 3
+      Calcul freq : 401 677411.8 Hz   Altitude :    0 m
+              04           01          248          105
+             133           38          199           49
+             247           36           32           20
+             201           08           71          253
+              80           00           66          124
+              00           00           00
+
+ 161606 Date : 28.07.18 11:11:53  LC : B  IQ : 08
+      Lat1 : 36.978S  Lon1 :  53.930W  Lat2 : 36.978S  Lon2 :  53.930W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -136 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677406.4 Hz   Altitude :    0 m
+              57          232          105          245
+              44          134           00           00
+              00           00           00           00
+              00           00           00           72
+              00           00           00
+
+ 161606 Date : 28.07.18 12:37:24  LC : A  IQ : 08
+      Lat1 : 36.967S  Lon1 :  53.915W  Lat2 : 36.967S  Lon2 :  53.915W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -120 dB
+      Pass duration : 187s   NOPC : 3
+      Calcul freq : 401 677410.1 Hz   Altitude :    0 m
+              44          184          169          244
+              96           53          115          166
+             128           00           00
+
+ 161606 Date : 28.07.18 19:02:48  LC : A  IQ : 08
+      Lat1 : 36.991S  Lon1 :  53.805W  Lat2 : 36.991S  Lon2 :  53.805W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -135 dB
+      Pass duration : 092s   NOPC : 3
+      Calcul freq : 401 677420.0 Hz   Altitude :    0 m
+              98          161          105          188
+             226           04          251          188
+              41          254          157
+
+ 161606 Date : 28.07.18 20:37:03  LC : A  IQ : 08
+      Lat1 : 37.041S  Lon1 :  53.885W  Lat2 : 37.041S  Lon2 :  53.885W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -126 dB
+      Pass duration : 230s   NOPC : 3
+      Calcul freq : 401 677416.8 Hz   Altitude :    0 m
+              78          102          121          236
+             192          172          134           04
+              00           00           00
+
+ 161606 Date : 28.07.18 22:25:18  LC : A  IQ : 08
+      Lat1 : 37.035S  Lon1 :  53.905W  Lat2 : 37.035S  Lon2 :  53.905W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -128 dB
+      Pass duration : 105s   NOPC : 3
+      Calcul freq : 401 677413.3 Hz   Altitude :    0 m
+              34          230          137          234
+              96           54          126          145
+              36           00           00
+
+ 161606 Date : 28.07.18 23:08:58  LC : B  IQ : 08
+      Lat1 : 37.037S  Lon1 :  53.910W  Lat2 : 37.037S  Lon2 :  53.910W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -131 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677418.4 Hz   Altitude :    0 m
+              43          146           89          234
+              00           54          127          147
+             161           00           00
+
+ 161606 Date : 29.07.18 06:25:43  LC : 1  IQ : 48
+      Lat1 : 37.008S  Lon1 :  53.853W  Lat2 : 37.008S  Lon2 :  53.853W
+      Nb mes : 005  Nb mes>-120dB : 000  Best level : -128 dB
+      Pass duration : 232s   NOPC : 3
+      Calcul freq : 401 677417.9 Hz   Altitude :    0 m
+              22          184          168          244
+              78           05           64           45
+              02           07           11          140
+              16           34           97          201
+              07           06          176          128
+              00           00           00
+
+ 161606 Date : 29.07.18 08:05:42  LC : 1  IQ : 58
+      Lat1 : 37.017S  Lon1 :  53.892W  Lat2 : 37.017S  Lon2 :  53.892W
+      Nb mes : 004  Nb mes>-120dB : 000  Best level : -128 dB
+      Pass duration : 180s   NOPC : 3
+      Calcul freq : 401 677411.2 Hz   Altitude :    0 m
+              29           09           89          238
+              14           00           00           23
+              01           04           05          133
+             133          138           10           10
+              11           10          247
+
+ 161606 Date : 29.07.18 08:07:01  LC : B  IQ : 06
+      Lat1 : 37.017S  Lon1 :  53.891W  Lat2 : 37.017S  Lon2 :  53.891W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -133 dB
+      Pass duration : 045s   NOPC : 3
+      Calcul freq : 401 677412.2 Hz   Altitude :    0 m
+              67          157          137          237
+              44          129           00           00
+              00           00           00           00
+              00           00           12           48
+              00           00           00
+
+ 161606 Date : 29.07.18 10:37:53  LC : B  IQ : 08
+      Lat1 : 37.014S  Lon1 :  53.907W  Lat2 : 37.014S  Lon2 :  53.907W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -140 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677398.8 Hz   Altitude :    0 m
+              49          176          121          250
+              00           60          130           08
+              08           00           00           01
+              00           02           00
+
+ 161606 Date : 29.07.18 10:41:38  LC : B  IQ : 06
+      Lat1 : 37.014S  Lon1 :  53.898W  Lat2 : 37.014S  Lon2 :  53.898W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -129 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677402.9 Hz   Altitude :    0 m
+              04           01          250          170
+              69           13          190           50
+              87           38           64           20
+             200          172           51          253
+              84           00           66          127
+             192           00           00
+
+ 161606 Date : 29.07.18 10:41:38  LC : B  IQ : 06
+      Lat1 : 37.009S  Lon1 :  53.899W  Lat2 : 37.009S  Lon2 :  53.899W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -131 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677411.2 Hz   Altitude :    0 m
+              04           01          250          170
+              69           13          190           50
+              87           38           64           20
+             200          172           51          253
+              84           00           66          127
+             192           00           00
+
+ 161606 Date : 29.07.18 11:25:08  LC : B  IQ : 08
+      Lat1 : 37.009S  Lon1 :  53.906W  Lat2 : 37.009S  Lon2 :  53.906W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -137 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677409.4 Hz   Altitude :    0 m
+              66          193           73          248
+             204          130           00           00
+              00           00           00           00
+              00           00           04           48
+              00           00           00
+
+ 161606 Date : 29.07.18 22:08:48  LC : B  IQ : 08
+      Lat1 : 37.034S  Lon1 :  53.989W  Lat2 : 37.034S  Lon2 :  53.989W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -137 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677398.6 Hz   Altitude :    0 m
+              46          169          105          238
+             192           54          118           11
+             153           00           00
+
+ 161606 Date : 30.07.18 07:50:01  LC : A  IQ : 08
+      Lat1 : 37.030S  Lon1 :  53.853W  Lat2 : 37.030S  Lon2 :  53.853W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -125 dB
+      Pass duration : 185s   NOPC : 3
+      Calcul freq : 401 677416.7 Hz   Altitude :    0 m
+              71          131           73          244
+             156          130           00           08
+              38          192           15          240
+              29           20          224           31
+              34          149          105
+
+ 161606 Date : 30.07.18 08:35:13  LC : A  IQ : 08
+      Lat1 : 37.035S  Lon1 :  53.849W  Lat2 : 37.035S  Lon2 :  53.849W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -136 dB
+      Pass duration : 226s   NOPC : 3
+      Calcul freq : 401 677418.6 Hz   Altitude :    0 m
+              38          241          233          243
+              32           54          119           31
+              28           00           00
+
+ 161606 Date : 30.07.18 09:20:05  LC : 3  IQ : 58
+      Lat1 : 37.025S  Lon1 :  53.870W  Lat2 : 37.025S  Lon2 :  53.870W
+      Nb mes : 004  Nb mes>-120dB : 001  Best level : -116 dB
+      Pass duration : 185s   NOPC : 3
+      Calcul freq : 401 677417.7 Hz   Altitude :    0 m
+              66          141          201          242
+             107          130           00           00
+              00           00           00           00
+              00           10           20
+
+ 161606 Date : 30.07.18 21:31:46  LC : B  IQ : 00
+      Lat1 : 37.126S  Lon1 :  53.854W  Lat2 : 37.126S  Lon2 :  53.854W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -129 dB
+      Pass duration : 045s   NOPC : 3
+      Calcul freq : 401 677413.4 Hz   Altitude :    0 m
+              21           67           89          248
+             206           00           00          146
+             128          131           04          133
+             133          145           25           11
+             138          138          104
+
+ 161606 Date : 30.07.18 21:34:51  LC : B  IQ : 06
+      Lat1 : 37.128S  Lon1 :  53.870W  Lat2 : 37.128S  Lon2 :  53.870W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -130 dB
+      Pass duration : 045s   NOPC : 3
+      Calcul freq : 401 677418.0 Hz   Altitude :    0 m
+              18           27           09          248
+             110           00           00           33
+             130           06          139           17
+             144          175           93          172
+             144          137           62          128
+              00           00           00
+
+ 161606 Date : 31.07.18 01:22:18  LC : B  IQ : 08
+      Lat1 : 37.130S  Lon1 :  53.917W  Lat2 : 37.130S  Lon2 :  53.917W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -127 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677426.9 Hz   Altitude :    0 m
+              57          115          121          244
+             108          133           00           00
+              08           32           00           00
+              00           00           00           48
+              00           00           00
+
+ 161606 Date : 31.07.18 11:34:03  LC : B  IQ : 08
+      Lat1 : 37.121S  Lon1 :  54.025W  Lat2 : 37.121S  Lon2 :  54.025W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -130 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677413.1 Hz   Altitude :    0 m
+              49          176          121          250
+              64           60          130           08
+              08           00           00           00
+              01           02           25
+
+ 161606 Date : 31.07.18 21:11:17  LC : B  IQ : 08
+      Lat1 : 37.009S  Lon1 :  53.966W  Lat2 : 37.009S  Lon2 :  53.966W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -135 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677431.8 Hz   Altitude :    0 m
+              77           04          185          242
+              12          130           00           00
+              00           00           00           00
+              00           10           10           09
+              20           30           93
+
+ 161606 Date : 31.07.18 22:35:40  LC : B  IQ : 08
+      Lat1 : 37.020S  Lon1 :  53.910W  Lat2 : 37.020S  Lon2 :  53.910W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -131 dB
+      Pass duration : 186s   NOPC : 3
+      Calcul freq : 401 677421.9 Hz   Altitude :    0 m
+              24          200          105          241
+              46           00           00          189
+              03           10          146           22
+              28           78           89          193
+              23          146          248
+
+ 161606 Date : 31.07.18 22:37:13  LC : B  IQ : 06
+      Lat1 : 37.008S  Lon1 :  53.902W  Lat2 : 37.008S  Lon2 :  53.902W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -137 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677413.1 Hz   Altitude :    0 m
+              22          156          233          240
+             206           00           00           45
+              02           07           11          140
+              16           34           97          201
+              07           06          176          128
+              00           00           00
+
+ 161606 Date : 01.08.18 00:14:51  LC : A  IQ : 08
+      Lat1 : 37.021S  Lon1 :  53.910W  Lat2 : 37.021S  Lon2 :  53.910W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -124 dB
+      Pass duration : 135s   NOPC : 3
+      Calcul freq : 401 677413.2 Hz   Altitude :    0 m
+              51           93           25          255
+              44          137           00           00
+              00           00           64           00
+              00           00           04           40
+              00          112           00
+
+ 161606 Date : 01.08.18 20:25:04  LC : B  IQ : 00
+      Lat1 : 37.033S  Lon1 :  53.945W  Lat2 : 37.033S  Lon2 :  53.945W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -120 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677410.8 Hz   Altitude :    0 m
+              37          125          153          248
+             192           54          116           18
+             128          128           00
+
+ 161606 Date : 02.08.18 00:08:47  LC : A  IQ : 08
+      Lat1 : 37.030S  Lon1 :  53.918W  Lat2 : 37.030S  Lon2 :  53.918W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -124 dB
+      Pass duration : 093s   NOPC : 3
+      Calcul freq : 401 677414.2 Hz   Altitude :    0 m
+              59          115          121          245
+             108          133           04           00
+              08           32           00           00
+              00           32           00           48
+              12           00           00
+
+ 161606 Date : 02.08.18 00:09:36  LC : A  IQ : 06
+      Lat1 : 37.026S  Lon1 :  53.888W  Lat2 : 37.026S  Lon2 :  53.888W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -133 dB
+      Pass duration : 193s   NOPC : 2
+      Calcul freq : 401 677413.3 Hz   Altitude :    0 m
+              44          184          169          244
+              96           53          115          166
+             128           00           00
+
+ 161606 Date : 02.08.18 08:38:28  LC : A  IQ : 08
+      Lat1 : 37.025S  Lon1 :  53.834W  Lat2 : 37.025S  Lon2 :  53.834W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -133 dB
+      Pass duration : 135s   NOPC : 3
+      Calcul freq : 401 677419.0 Hz   Altitude :    0 m
+              61           25          217          248
+             107          130           00           00
+              00           32           64          128
+              00           00           12
+
+ 161606 Date : 02.08.18 09:50:18  LC : 2  IQ : 56
+      Lat1 : 37.023S  Lon1 :  53.811W  Lat2 : 37.023S  Lon2 :  53.811W
+      Nb mes : 005  Nb mes>-120dB : 000  Best level : -131 dB
+      Pass duration : 179s   NOPC : 2
+      Calcul freq : 401 677413.3 Hz   Altitude :    0 m
+              17          183          185          247
+              46           00           00           20
+             129           03           05           05
+              05          139          139          140
+              10          139          246          128
+              00           00           00
+
+ 161606 Date : 02.08.18 09:49:11  LC : 1  IQ : 58
+      Lat1 : 37.020S  Lon1 :  53.826W  Lat2 : 37.020S  Lon2 :  53.826W
+      Nb mes : 004  Nb mes>-120dB : 000  Best level : -124 dB
+      Pass duration : 179s   NOPC : 3
+      Calcul freq : 401 677413.0 Hz   Altitude :    0 m
+              17          183          185          247
+              46           00           00           20
+             129           03           05           05
+              05          139          139          140
+              10          139          246          128
+              00           00           00
+
+ 161606 Date : 02.08.18 10:23:55  LC : B  IQ : 08
+      Lat1 : 37.019S  Lon1 :  53.826W  Lat2 : 37.019S  Lon2 :  53.826W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -126 dB
+      Pass duration : 044s   NOPC : 2
+      Calcul freq : 401 677414.6 Hz   Altitude :    0 m
+              17          178           09          246
+             206           00           00           20
+              01           03           04          133
+              05          140          142           14
+              13          140          110          128
+              00           00           00
+
+ 161606 Date : 02.08.18 13:42:19  LC : B  IQ : 08
+      Lat1 : 37.010S  Lon1 :  53.825W  Lat2 : 37.010S  Lon2 :  53.825W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -136 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677404.5 Hz   Altitude :    0 m
+              29           88           49          244
+              14           32           16           83
+              17           03           12          135
+             134          138          155          139
+             139          139          121
+
+ 161606 Date : 02.08.18 21:38:03  LC : B  IQ : 08
+      Lat1 : 37.005S  Lon1 :  53.808W  Lat2 : 37.005S  Lon2 :  53.808W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -131 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677409.4 Hz   Altitude :    0 m
+              71           45          153          249
+              44          136           02           04
+              00           00           00           00
+              00           00           08           48
+              00           00           00
+
+ 161606 Date : 03.08.18 07:05:33  LC : A  IQ : 08
+      Lat1 : 37.028S  Lon1 :  53.878W  Lat2 : 37.028S  Lon2 :  53.878W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -120 dB
+      Pass duration : 135s   NOPC : 3
+      Calcul freq : 401 677426.1 Hz   Altitude :    0 m
+              75          250           73          254
+              12          131           00           00
+              00           02           00           40
+              19          240           74           15
+              16          220          255
+
+ 161606 Date : 03.08.18 08:44:09  LC : A  IQ : 08
+      Lat1 : 37.013S  Lon1 :  53.886W  Lat2 : 37.013S  Lon2 :  53.886W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -135 dB
+      Pass duration : 134s   NOPC : 3
+      Calcul freq : 401 677423.5 Hz   Altitude :    0 m
+              51          136           57          252
+             108          135           00           00
+              00           00           32           00
+              00           00           00           56
+              00           00           00
+
+ 161606 Date : 03.08.18 21:03:54  LC : 1  IQ : 50
+      Lat1 : 36.973S  Lon1 :  53.788W  Lat2 : 36.973S  Lon2 :  53.788W
+      Nb mes : 004  Nb mes>-120dB : 002  Best level : -118 dB
+      Pass duration : 236s   NOPC : 3
+      Calcul freq : 401 677417.1 Hz   Altitude :    0 m
+              56          226          201          254
+             204          137           00           00
+              00           00           00           00
+              00           00           11          100
+             136          130          128
+
+ 161606 Date : 03.08.18 21:42:35  LC : B  IQ : 08
+      Lat1 : 36.958S  Lon1 :  53.795W  Lat2 : 36.958S  Lon2 :  53.795W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -135 dB
+      Pass duration : 046s   NOPC : 2
+      Calcul freq : 401 677415.8 Hz   Altitude :    0 m
+              19           87          233          254
+             206           00           00           20
+              01           03           05           05
+             132          140           05           24
+             204           09          136           72
+              08          136          238
+
+ 161606 Date : 03.08.18 23:40:00  LC : 3  IQ : 58
+      Lat1 : 36.927S  Lon1 :  53.872W  Lat2 : 36.927S  Lon2 :  53.872W
+      Nb mes : 006  Nb mes>-120dB : 000  Best level : -120 dB
+      Pass duration : 225s   NOPC : 3
+      Calcul freq : 401 677414.4 Hz   Altitude :    0 m
+              77          131          121          252
+              12          128          213          154
+              65           01           16           00
+              00           00           76           40
+              00           00           32
+
+ 161606 Date : 04.08.18 08:38:38  LC : B  IQ : 08
+      Lat1 : 36.977S  Lon1 :  53.999W  Lat2 : 36.977S  Lon2 :  53.999W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -133 dB
+      Pass duration : 181s   NOPC : 3
+      Calcul freq : 401 677460.2 Hz   Altitude :    0 m
+              34          145          154           02
+             192           54          124          155
+              03           00           00
+
+ 161606 Date : 04.08.18 09:14:13  LC : B  IQ : 08
+      Lat1 : 37.027S  Lon1 :  53.914W  Lat2 : 37.027S  Lon2 :  53.914W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -133 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677415.4 Hz   Altitude :    0 m
+              28          208           58           02
+              14           00           00           39
+             131           08           14           17
+             153           95          199           20
+              08           05          180          128
+              00           00           00
+
+ 161606 Date : 04.08.18 11:00:23  LC : B  IQ : 08
+      Lat1 : 37.061S  Lon1 :  53.866W  Lat2 : 37.061S  Lon2 :  53.866W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -130 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677408.2 Hz   Altitude :    0 m
+              37          221           41          254
+             101           00           00           01
+             114           20           00
+
+ 161606 Date : 04.08.18 11:00:23  LC : B  IQ : 00
+      Lat1 : 37.065S  Lon1 :  53.864W  Lat2 : 37.065S  Lon2 :  53.864W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -137 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677415.1 Hz   Altitude :    0 m
+              37          221           41          254
+             101           00           00           01
+             114           20           00
+
+ 161606 Date : 04.08.18 19:17:24  LC : A  IQ : 08
+      Lat1 : 37.145S  Lon1 :  53.982W  Lat2 : 37.145S  Lon2 :  53.982W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -131 dB
+      Pass duration : 223s   NOPC : 2
+      Calcul freq : 401 677410.4 Hz   Altitude :    0 m
+              34           71           58           06
+             192           53          118          144
+             128           00           00
+
+ 161606 Date : 04.08.18 23:27:23  LC : B  IQ : 08
+      Lat1 : 37.153S  Lon1 :  53.989W  Lat2 : 37.153S  Lon2 :  53.989W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -135 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677395.5 Hz   Altitude :    0 m
+              55           47           74           02
+              12          132           00           00
+              08           80           32           64
+              00           01           14           08
+             222          253          215
+
+ 161606 Date : 05.08.18 00:12:18  LC : B  IQ : 08
+      Lat1 : 37.193S  Lon1 :  53.951W  Lat2 : 37.193S  Lon2 :  53.951W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -132 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677397.4 Hz   Altitude :    0 m
+              29          173          217          255
+              46           00           00           24
+             129           04           08           08
+             138          159           24          153
+             139          139          237
+
+ 161606 Date : 05.08.18 10:11:05  LC : B  IQ : 08
+      Lat1 : 37.150S  Lon1 :  54.169W  Lat2 : 37.150S  Lon2 :  54.169W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -121 dB
+      Pass duration : 096s   NOPC : 3
+      Calcul freq : 401 677414.5 Hz   Altitude :    0 m
+              40          138           10           04
+             192           54          113          141
+              08          128           00
+
+ 161606 Date : 05.08.18 19:06:51  LC : B  IQ : 08
+      Lat1 : 37.221S  Lon1 :  54.150W  Lat2 : 37.221S  Lon2 :  54.150W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -136 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677425.1 Hz   Altitude :    0 m
+              60           46           58           10
+             192          155          129           16
+              00           00           00
+
+ 161606 Date : 05.08.18 23:20:32  LC : A  IQ : 08
+      Lat1 : 37.239S  Lon1 :  54.238W  Lat2 : 37.239S  Lon2 :  54.238W
+      Nb mes : 003  Nb mes>-120dB : 000  Best level : -124 dB
+      Pass duration : 273s   NOPC : 3
+      Calcul freq : 401 677415.0 Hz   Altitude :    0 m
+              68          102          202           05
+              44          129           00           00
+              00           00           00           00
+              00           00           00           64
+              00           00           00
+
+ 161606 Date : 06.08.18 08:03:38  LC : B  IQ : 08
+      Lat1 : 37.316S  Lon1 :  54.275W  Lat2 : 37.316S  Lon2 :  54.275W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -137 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677414.4 Hz   Altitude :    0 m
+              47           66          130          145
+             236          255          239          248
+              27          145          162          132
+             128           08           00
+
+ 161606 Date : 06.08.18 09:58:02  LC : B  IQ : 08
+      Lat1 : 37.329S  Lon1 :  54.286W  Lat2 : 37.329S  Lon2 :  54.286W
+      Nb mes : 001  Nb mes>-120dB : 000  Best level : -126 dB
+      Pass duration : 000s   NOPC : 3
+      Calcul freq : 401 677418.1 Hz   Altitude :    0 m
+              48          173           90           07
+              44          129           00           00
+              08           64           96           64
+              00           00           04           08
+              00           00           00
+
+ 161606 Date : 06.08.18 10:40:48  LC : B  IQ : 08
+      Lat1 : 37.341S  Lon1 :  54.300W  Lat2 : 37.341S  Lon2 :  54.300W
+      Nb mes : 002  Nb mes>-120dB : 000  Best level : -125 dB
+      Pass duration : 090s   NOPC : 2
+      Calcul freq : 401 677412.4 Hz   Altitude :    0 m
+              51          129          202           06
+              00          188          135           64
+             172          129           08
