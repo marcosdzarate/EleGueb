@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+
+		<title>ChartJS - tiempo</title>
+
+		
+		<!-- javascript -->
+		<script type="text/javascript" src="moment.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="Chart.min.js"></script>		
+	</head>
+	<body>
+	<div id="container" style="width: 75%; margin:0 auto">
+		<canvas id="myChart" width="600" height="400" ></canvas>
+	</div>
+<script>
+function cfecha(fst,s){
+/* devuelve el string fecha "fst" como una fecha mas "s" dias */
+    
+	var d = new Date(fst);
+	d.setDate(d.getDate() + s);
+	return d;
+}
+var labelX = [
+			cfecha("09/01/2017",-2),
+			cfecha("10/30/2017",+2) ];
+
+var dDS1 = [
+			{x: '2017-09-05', y: 12}, 
+			{x: '2017-09-15', y: 38}, 
+
+			];
+var dDS2 = [
+			{x: '2017-09-08', y: 12}, 
+			{x: '2017-09-25', y: 19}, 
+			];
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labelX,
+        datasets: [{
+            label: '#RS 1',
+            data: dDS1,
+            backgroundColor: 'rgba(255,99,132,1)',
+            borderColor: 'rgba(255,99,132,1)',
+            borderWidth: 1,
+			lineTension: 0,
+			fill:false
+        },
+		{
+            label: '#RS 2',
+            data: dDS2,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(255, 206, 86, 1)',
+            borderWidth: 1,
+			lineTension: 0,
+			fill: false
+        }]
+    },
+    options: {
+		title:{
+			text: "grafico en el tiempo....",
+			display: true,
+                },
+				scales: {
+					xAxes: [{
+						type: "time",
+						time: {
+							format: "YYYY-MM-DD",
+							tooltipFormat: 'MMM D',
+							unit: 'day',
+							unitStepSize: 7,
+							displayFormats: {
+								day: 'MMM D'
+								}
+						},
+						scaleLabel: {
+							display: true,
+							labelString: 'fecha'
+						}
+					}, ],
+					yAxes: [{
+						scaleLabel: {
+							display: true,
+							labelString: 'cantidad'
+						}
+					}]
+				}
+    }
+});
+</script>
+
+	</body>
+</html>

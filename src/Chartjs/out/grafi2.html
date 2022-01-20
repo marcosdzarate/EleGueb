@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+
+		<title>ChartJS - BarGraph</title>
+
+		
+		<!-- javascript -->
+		<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="maifunc.js"></script>
+		
+		
+	
+	</head>
+	<body>
+		<div id="container" style="width: 75%;">
+			<canvas id="myChart" width="600" height="400"></canvas>
+		</div>
+			
+			
+			
+		<script type="text/javascript" src="Chart.js"></script>		
+			
+			
+		<script>
+			var labelX=["A", "B", "C", "D", "E", "F"];
+			var DS1 = [10, 20, 30, 50, 60, 70];
+			var DS2 = [10, 20, 30, 50, 60, 70];
+			var DS3 = [10, 20, 30, 50, 60, 70];
+			var DS4 = [10, 20, 30, 50, 60, 70];
+			var DS5 = [];
+			
+			var Manda = [0,1,2,3,4,5]    
+
+			var barChartData = {
+					labels: labelX ,
+					datasets: [
+					{
+						label: '#RS 1',
+						data: DS1,
+						backgroundColor: 'rgba(255,99,132,0.5)',
+						borderColor: 'rgba(255,99,132,1)',
+						borderWidth: 1,
+						lineTension: 0
+					},
+					{
+						label: '#RS 2',
+						data: DS2,
+						backgroundColor: 'rgba(25,99,100,1)',
+						borderColor: 'rgba(255,99,132,1)',
+						borderWidth: 1,
+						lineTension: 0
+					},
+					{
+						label: '#RS 3 ',
+						data: DS3,
+						backgroundColor: 'rgba(55,1,132,1)',
+						borderColor: 'rgba(255,99,132,1)',
+						borderWidth: 1,
+						lineTension: 0
+					},		
+					{
+						label: '#RS 4',
+						data: DS4,
+						backgroundColor: 'rgba(54, 162, 235, 0.2)',
+						borderColor: 'rgba(255, 206, 86, 1)',
+						borderWidth: 1,
+						lineTension: 0,
+						fill: false
+					},
+					{
+						label: 'ninguno/todos',
+						data: [],
+						backgroundColor: 'rgba(54, 162, 235, 0.2)',
+						borderColor: 'rgba(255, 206, 86, 1)',
+						borderWidth: 1,
+						lineTension: 0,
+						fill: false
+					}
+					]
+				};
+
+
+var defaultLegendClickHandler = Chart.defaults.global.legend.onClick;
+Chart.defaults.global.legend.onClick = function (e, legendItem) {
+    var index = legendItem.datasetIndex;
+
+    if (index > 4) {
+        // Do the original logic
+        defaultLegendClickHandler.call(this, e, legendItem);
+    } else {
+        let ci = this.chart;
+        [ci.getDatasetMeta(0),
+         ci.getDatasetMeta(1),
+		 ci.getDatasetMeta(2),
+		 ci.getDatasetMeta(3)].forEach(function(meta) {
+            meta.hidden = meta.hidden === null? !ci.data.datasets[index].hidden : null;
+        });
+        ci.update();
+    }
+};
+
+				
+			var ctx = document.getElementById('myChart');				
+			var myChart = new Chart(ctx, {
+				type: 'bar',
+				data: barChartData,
+				options: {
+					maintainAspectRatio:false,
+					title:{
+						text: "grafico ....",
+						display: true
+						},				
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero:true
+							}
+						}]
+					},
+					legend: {
+						display: true,
+						position: 'bottom',
+						labels: {
+							fontColor: 'rgb(0, 0, 0)'
+						}
+					}		
+				}
+			});
+
+			/*copia de datos para reponer*/
+			var clabelX= labelX.slice(0);
+			var cDS1 = DS1.slice(0);
+			var cDS2 = DS2.slice(0);
+			var cDS3 = DS3.slice(0);
+			var cDS4 = DS4.slice(0);
+			var cDS5 = DS5.slice(0);
+
+
+			
+
+			function elcolor(t){
+			  alert(module.export);
+			  }
+			  
+			function DSponeSaca(mCh){
+				let ci = mCh.chart;
+				
+				for (i = 0; i < ci.data.datasets.length-1; i++) {
+				   var meta = ci.getDatasetMeta(i);
+				   meta.hidden = meta.hidden === null? !ci.data.datasets[i].hidden : null;
+				}
+				ci.update();			
+			}
+			  
+		</script>
+<p>
+			<button type="button" onclick=DSponeSaca(myChart) class="btn btn-primary btn-xs"> ninguno/todos </button>
+
+
+			<input type="checkbox" class='chbx' name="cat1" onclick=SacaPone(this) value="0" checked> A   
+			<input type="checkbox" class='chbx' name="cat2" onclick=SacaPone(this) value="1" checked> Bdev
+			<input type="checkbox" class='chbx' name="cat3" onclick=SacaPone(this) value="2" checked> C   
+			<input type="checkbox" class='chbx' name="cat4" onclick=SacaPone(this) value="3" checked> D   
+			<input type="checkbox" class='chbx' name="cat5" onclick=SacaPone(this) value="4" checked> E   
+			<input type="checkbox" class='chbx' name="cat6" onclick=SacaPone(this) value="5" checked> Fx  <br>
+</p>
+
+			<button type="button" onclick=sacaTodo() class="btn btn-primary btn-xs"> ninguna categor&iacute;a </button>
+			<input type="checkbox" name="cat"  value="5" checked> <br>
+
+</body>
+</html>
