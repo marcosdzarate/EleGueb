@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title><?php echo siglaGrupe ?></title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="style/main.css">-->
+</head>
+<body>
+
+</body>
+</html>
