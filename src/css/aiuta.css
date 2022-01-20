@@ -1,0 +1,17 @@
+/*boton ayuda*/
+.botonayuda {
+  color: #fff;
+  background-color: #344560; /*#31b0d5;*/
+  border-radius: 1px;
+  border: none;
+  text-align: center;
+  font-size: 24px;
+  padding: 7px;
+  width: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+      position: fixed;
+      top: 30px;
+      left: 0;
+}
