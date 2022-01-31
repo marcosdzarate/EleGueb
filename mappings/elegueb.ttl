@@ -1,0 +1,948 @@
+@prefix map: <#> .
+@prefix db: <> .
+@prefix vocab: <vocab/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/>.
+@prefix dwciri: <http://rs.tdwg.org/dwc/iri/>.
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/>.
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix qudt: <http://qudt.org/1.1/schema/qudt#>.
+@prefix cdt: <http://w3id.org/lindt/custom_datatypes#> .
+@prefix ro: <http://purl.obolibrary.org/obo/> .
+@prefix envo: <http://purl.obolibrary.org/obo/>.
+@prefix fabio: <http://purl.org/spar/fabio/>.
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix bigeonto: <http://www.w3id.org/cenpat-gilia/bigeonto/#>.
+@prefix d2r: <http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf#> .
+@prefix meta: <http://www4.wiwiss.fu-berlin.de/bizer/d2r-server/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+map:database a d2rq:Database;
+	d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+	d2rq:jdbcDSN "jdbc:mysql://localhost:3306/gemma";
+	d2rq:username "root";
+	d2rq:password "Alakran.23";
+	#d2rq:limitPerPropertyBridge "false";
+	jdbc:autoReconnect "true";
+	jdbc:zeroDateTimeBehavior "convertToNull";
+	.
+<> a d2r:Server;
+  rdfs:label "Observational/Hydrographic data of the South Atlantic Ocean published as LOD";
+  d2r:baseURI <http://localhost:2020/>;
+  d2r:port 2020;
+  d2r:vocabularyIncludeInstances true;  
+  d2r:sparqlTimeout 1200;
+  d2r:pageTimeout 5;
+  d2r:metadataTemplate "resource-metadata.ttl" ;
+  d2r:datasetMetadataTemplate "dataset-metadata.ttl" ;
+  meta:datasetTitle "SES Linked Open Data" ;
+  meta:datasetDescription "Publication of Observational/HydrographicData of the Southwestern Atlantic Ocean Obtained from Southern Elephant Seals." ;
+  meta:datasetSource "This other dataset" ;  
+  meta:operatorName "Marcos Zarate" ;
+  meta:operatorHomepage "https://orcid.org/0000-0001-8851-8602";
+  .
+
+###	
+### Observation of temperature
+###	
+map:observationTemp a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/temp";
+	d2rq:class sosa:Observation;
+	d2rq:classDefinitionLabel "Obsevation-temp";
+	.
+map:observationTemp__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationTemp;
+	d2rq:property rdfs:label;
+	d2rq:pattern "observation # @@buceos_obs.ID@@ of water column temperature.";
+	.
+###	
+### Observation of depth
+###	
+map:observationDepth a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/depth";
+	d2rq:class sosa:Observation;
+	d2rq:classDefinitionLabel "Obsevation depth";
+	.
+map:observationDepht__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationDepth;
+	d2rq:property rdfs:label;
+	d2rq:pattern "observation # @@buceos_obs.ID@@ of water column depth.";
+	.
+###	
+### Observation of location
+###	
+map:observationLocation a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/location";
+	d2rq:class sosa:Observation;
+	d2rq:classDefinitionLabel "Obsevation location";
+	.
+map:observationLocation__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationLocation;
+	d2rq:property rdfs:label;
+	d2rq:pattern "observation # @@buceos_obs.ID@@ of location .";
+	.
+	
+###	
+### sensor
+###	
+map:madeBySensor a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationTemp;
+	d2rq:belongsToClassMap map:observationDepth;
+	d2rq:belongsToClassMap map:observationLocation;
+	d2rq:property sosa:madeBySensor;
+	d2rq:uriPattern "sensor/@@buceos_obs.tipo@@/id-@@buceos_obs.identificacion|urlify@@";
+	d2rq:limitInverse 0;
+	.
+map:sensor a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "sensor/@@buceos_obs.tipo@@/id-@@buceos_obs.identificacion|urlify@@";
+	d2rq:class sosa:Sensor;
+	.	
+map:sensor_label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:sensor;
+	d2rq:property rdfs:comment;
+	d2rq:pattern "sensor type: @@buceos_obs.tipo@@ | model: @@buceos_obs.modelo@@ | ID: @@buceos_obs.identificacion@@ | manufactured by: @@buceos_obs.fabricante@@";
+	d2rq:lang "en";
+	.
+map:isHostedBy a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:sensor;
+	d2rq:property sosa:isHostedBy;
+	d2rq:uriPattern "platform/@@buceos_obs.claveU@@";
+	d2rq:limitInverse 0;
+	.
+map:madeObservationdepht a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:sensor;
+	d2rq:property sosa:madeObservation;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/depth";	
+	d2rq:limitInverse 0;
+	.	
+map:madeObservationTemp a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:sensor;
+	d2rq:property sosa:madeObservation;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/temp";
+	d2rq:limitInverse 0;
+	.
+map:madeObservationLocation a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:sensor;
+	d2rq:property sosa:madeObservation;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/location";
+	d2rq:limitInverse 0;
+	.	
+	
+########## Germán: A sensor also observes an observable property
+
+map:sensorObservesdepht a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:sensor;
+	d2rq:property sosa:observes;
+	d2rq:uriPattern "observableProperty/id-@@buceos_obs.ID@@/depth";	
+	d2rq:limitInverse 0;
+	.	
+
+map:sensorObservesTemp a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:sensor;
+	d2rq:property sosa:observes;
+	d2rq:uriPattern "observableProperty/id-@@buceos_obs.ID@@/temp";
+	d2rq:limitInverse 0;
+	.
+
+map:sensorObservesLocation a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:sensor;
+	d2rq:property sosa:observes;
+	d2rq:uriPattern "observableProperty/id-@@buceos_obs.ID@@/location";
+	d2rq:limitInverse 0;
+	.
+
+###	
+### featureOfInterest
+###	
+map:observationTemp_nroBuceo a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationTemp;
+	d2rq:belongsToClassMap map:observationDepth;
+	d2rq:belongsToClassMap map:observationLocation;
+	d2rq:property sosa:hasFeatureOfInterest;
+	d2rq:uriPattern "featureOfInterest/sampleOfWaterColum/id-@@buceos_obs.ID@@";
+	d2rq:limitInverse 0;
+	.
+map:featureOfInterest a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "featureOfInterest/sampleOfWaterColum/id-@@buceos_obs.ID@@";
+	d2rq:class sosa:FeatureOfInterest ;
+	d2rq:classDefinitionLabel "feature of interest";
+	.	
+map:featureOfInterest-label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:featureOfInterest;
+	d2rq:property rdfs:comment;
+	d2rq:pattern "Sample # @@buceos_obs.ID@@ of water column made by platform @@buceos_obs.claveU@@";
+	d2rq:lang "en";
+	.	
+map:isFeatureOfInterestOfDepht a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:featureOfInterest;
+	d2rq:property sosa:isFeatureOfInterestOf;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/depth";
+	d2rq:limitInverse 0;	
+	.	
+map:isFeatureOfInterestOfTemp a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:featureOfInterest;
+	d2rq:property sosa:isFeatureOfInterestOf;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/temp";
+	d2rq:limitInverse 0;		
+	.
+map:isFeatureOfInterestOfLocation a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:featureOfInterest;
+	d2rq:property sosa:isFeatureOfInterestOf;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/location";	
+	d2rq:limitInverse 0;	
+	.		
+	
+###	
+### observedProperty temp
+###	
+map:observationTemp_featureOfInterest a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationTemp;
+	d2rq:property sosa:observedProperty;
+	d2rq:uriPattern "observableProperty/id-@@buceos_obs.ID@@/temp"; 
+	d2rq:limitInverse 0;
+	.	
+map:observedPropertyTemp a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "observableProperty/id-@@buceos_obs.ID@@/temp";
+	d2rq:class sosa:ObservableProperty ;
+	d2rq:classDefinitionLabel "feature of interest";
+	.	
+map:observedPropertyTemp-label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observedPropertyTemp;
+	d2rq:property rdfs:comment;
+	d2rq:pattern "Temperature of the water column";
+	d2rq:lang "en";
+	.	
+map:nercURITemp a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observedPropertyTemp;
+	d2rq:property owl:sameAs;
+	d2rq:uriPattern "http://vocab.nerc.ac.uk/collection/P02/current/TEMP/";
+	.
+
+###	
+### observedProperty depth
+###	
+map:observationDepht_featureOfInterest a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationDepth;
+	d2rq:property sosa:observedProperty;
+	d2rq:uriPattern "observableProperty/id-@@buceos_obs.ID@@/depth"; 
+	d2rq:limitInverse 0;
+	.
+map:observedPropertyDepth a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "observableProperty/id-@@buceos_obs.ID@@/depth";
+	d2rq:class sosa:ObservableProperty ;
+	d2rq:classDefinitionLabel "feature of interest";
+	.	
+map:observedPropertyDephtComment a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observedPropertyDepth;
+	d2rq:property rdfs:comment;
+	d2rq:pattern "Depth (spatial coordinate) relative to water surface in the water body";
+	d2rq:lang "en";
+	.	
+#map:observedPropertyDepth-label a d2rq:PropertyBridge;
+#	d2rq:belongsToClassMap map:observedPropertyDepth;
+#	d2rq:property rdfs:label;
+#	d2rq:pattern "depth";
+#	.
+map:nercURIDepht a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap  map:observedPropertyDepth;
+	d2rq:property owl:sameAs;
+	d2rq:uriPattern "http://vocab.nerc.ac.uk/collection/P01/current/ADEPZZ01/";
+	.	
+	
+	
+###	
+### observedProperty location
+###	
+map:observationLocation_featureOfInterest a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationLocation;
+	d2rq:property sosa:observedProperty;
+	d2rq:uriPattern "observableProperty/id-@@buceos_obs.ID@@/location"; 
+	d2rq:limitInverse 0;
+	.
+map:observedPropertyLocation a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "observableProperty/id-@@buceos_obs.ID@@/location";
+	d2rq:class sosa:ObservableProperty ;
+	d2rq:classDefinitionLabel "feature of interest";
+	.	
+map:observedPropertylocation-label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observedPropertyLocation;
+	d2rq:property rdfs:comment;
+	d2rq:pattern "Observed property location";
+	d2rq:lang "en";
+	.		
+###	
+### isObservedBy
+###	
+map:isObservedBySensor a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observedPropertyTemp;
+	d2rq:belongsToClassMap map:observedPropertyDepth;
+	d2rq:belongsToClassMap map:observedPropertyLocation;
+	d2rq:property sosa:isObservedBy;
+	d2rq:uriPattern "sensor/@@buceos_obs.tipo@@/id-@@buceos_obs.identificacion|urlify@@";
+	d2rq:limitInverse 0;
+	.
+
+
+###	
+### Result of temp
+###		
+map:result_temp a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationTemp;
+	d2rq:property sosa:hasResult;
+	d2rq:uriPattern "result/id-@@buceos_obs.ID@@/temp";
+	d2rq:limitInverse 0;
+	.
+map:resultTemp a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "result/id-@@buceos_obs.ID@@/temp";
+	d2rq:class sosa:Result;
+	d2rq:class qudt:QuantityValue;
+	d2rq:classDefinitionLabel "results";
+	.
+map:isResultOftemp a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:resultTemp;
+	d2rq:property sosa:isResultOf;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/temp";	
+	d2rq:limitInverse 0;
+	.		
+map:resultTemps_numericvalue4 a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:resultTemp;
+	d2rq:property qudt:numericValue;
+	d2rq:pattern "@@buceos_obs.temperaturaSuperficie@@";
+	d2rq:datatype xsd:double;
+	.
+map:resultTemps_unit3 a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:resultTemp;
+	d2rq:property qudt:unit;
+	d2rq:constantValue <http://qudt.org/vocab/unit#DegreeCelsius>;
+	.
+map:observationTemp_temperaturaFondo a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationTemp;
+	d2rq:property sosa:hasSimpleResult;	
+	d2rq:pattern "@@buceos_obs.temperaturaSuperficie@@ degree celsius";
+	d2rq:datatype cdt:temperature;
+	d2rq:limitInverse 0;
+	.
+	
+###	
+### Result depth
+###		
+map:result_depht a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationDepth;
+	d2rq:property sosa:hasResult;
+	d2rq:uriPattern "result/id-@@buceos_obs.ID@@/depth";
+	d2rq:limitInverse 0;
+	.
+map:resultDepth a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "result/id-@@buceos_obs.ID@@/depth";
+	d2rq:class sosa:Result;
+	d2rq:class qudt:QuantityValue;
+	d2rq:classDefinitionLabel "results";
+	.	
+map:isResultOfdepht a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:resultDepth;
+	d2rq:property sosa:isResultOf;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/depth";	
+	d2rq:limitInverse 0;
+	.		
+map:results_numericvalueDepht a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:resultDepth;
+	d2rq:property qudt:numericValue;
+	d2rq:pattern "@@buceos_obs.profundidadMed@@";
+	d2rq:datatype xsd:double;
+	.
+map:results_unitDepht a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:resultDepth;
+	d2rq:property qudt:unit;
+	d2rq:constantValue <http://qudt.org/vocab/unit#Meters>;
+	.
+map:observationDepth-profundidadMed a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationDepth;
+	d2rq:property sosa:hasSimpleResult;	
+	d2rq:pattern "@@buceos_obs.profundidadMed@@ meters";
+	d2rq:datatype cdt:meters;
+	d2rq:limitInverse 0;
+	.	
+	
+###	
+### Result location
+###		
+map:result_location a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationLocation;
+	d2rq:property sosa:hasResult;
+	d2rq:uriPattern "result/id-@@buceos_obs.ID@@/location";
+	d2rq:limitInverse 0;
+	.
+map:resultlocation a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "result/id-@@buceos_obs.ID@@/location";
+	d2rq:class sosa:Result;
+	d2rq:class geo:Point;	
+	d2rq:classDefinitionLabel "results";
+	.	
+map:isResultOflocation a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:resultlocation;
+	d2rq:property sosa:isResultOf;
+	d2rq:uriPattern "observation/id-@@buceos_obs.ID@@/location";	
+	d2rq:limitInverse 0;
+	.
+map:result_geometry_location a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:resultlocation;
+	d2rq:property geo:hasGeometry;
+	d2rq:uriPattern "geometry/point_@@buceos_obs.longi@@_@@buceos_obs.lati@@";
+	d2rq:limitInverse 0;
+	.	
+map:Geometry a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "geometry/point_@@buceos_obs.longi@@_@@buceos_obs.lati@@";
+	d2rq:class geo:Geometry;
+	.	
+map:Location_geomTexObs a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Geometry;
+	d2rq:property geo:asWKT;
+	d2rq:pattern "POINT (@@buceos_obs.longi@@ @@buceos_obs.lati@@)";
+	d2rq:datatype geo:wktLiteral;
+	.	
+map:results_location_long a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Geometry;
+	d2rq:property geo:long;
+	d2rq:column "buceos_obs.longi";
+	d2rq:datatype xsd:double;
+	.
+map:results_location_lati a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Geometry;
+	d2rq:property geo:lati;
+	d2rq:column "buceos_obs.lati";
+	d2rq:datatype xsd:double;
+	.	
+###	
+### sosa:ResultTime
+###
+map:ResultTime a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationTemp;
+	d2rq:belongsToClassMap map:observationDepth;
+	d2rq:belongsToClassMap map:observationLocation;
+	d2rq:property sosa:resultTime;
+	d2rq:pattern "@@buceos_obs.fecha@@T@@buceos_obs.horaInicio@@";
+	d2rq:datatype xsd:dateTime;	
+	d2rq:limitInverse 0;
+	.
+	
+###	
+### sosa:phenomenonTime	
+###
+map:buceos_obs_phenomenonTime a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:observationTemp;
+	d2rq:belongsToClassMap map:observationDepth;
+	d2rq:belongsToClassMap map:observationLocation;
+	d2rq:property sosa:phenomenonTime;
+	#d2rq:uriPattern "duration/sampleID-@@buceos_obs.ID@@";
+	d2rq:uriPattern "interval/sampleID-@@buceos_obs.ID@@";
+	d2rq:limitInverse 0;
+	.
+map:interval a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "interval/sampleID-@@buceos_obs.ID@@";
+	d2rq:class time:Interval;
+	d2rq:classDefinitionLabel "interval";
+	.	
+map:interval_hasbegining a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:interval;
+	d2rq:property time:hasBeginning;
+	d2rq:uriPattern "instant/@@buceos_obs.fecha@@T@@buceos_obs.horaInicio@@";
+	d2rq:limitInverse 0;
+	.		
+#time:instant
+map:instant a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "instant/@@buceos_obs.fecha@@T@@buceos_obs.horaInicio@@";
+	d2rq:class time:Instant;
+	d2rq:classDefinitionLabel "instant";
+	.	
+map:instantBeginning a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "instant/@@buceos_obs.fecha@@T@@buceos_obs.horaInicio@@";
+	d2rq:class time:Instant;
+	d2rq:classDefinitionLabel "instant";
+	.	
+map:instanteInicioDataTime a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:instantBeginning;
+	d2rq:property time:inXSDDateTimeStamp;
+	d2rq:pattern "@@buceos_obs.fecha@@T@@buceos_obs.horaInicio@@";
+	d2rq:datatype xsd:dateTime;
+	.
+map:interval_hasend a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:interval;
+	d2rq:property time:hasEnd;
+	d2rq:uriPattern "instant/@@buceos_obs.fecha@@T@@buceos_obs.horaFin@@";
+	d2rq:limitInverse 0;
+	.			
+map:instantEnd a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "instant/@@buceos_obs.fecha@@T@@buceos_obs.horaFin@@";
+	d2rq:class time:Instant;
+	d2rq:classDefinitionLabel "instant";
+	.	
+map:instanteFinDataTime a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:instantEnd;
+	d2rq:property time:inXSDDateTimeStamp;
+	d2rq:pattern "@@buceos_obs.fecha@@T@@buceos_obs.horaFin@@";
+	d2rq:datatype xsd:dateTime;
+	.
+###	
+### time:duration
+###	
+map:interval_hasduration a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:interval;
+	d2rq:property time:hasDuration;
+	d2rq:uriPattern "duration/sampleID-@@buceos_obs.ID@@";
+	d2rq:limitInverse 0;
+	.			
+map:duration a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "duration/sampleID-@@buceos_obs.ID@@";
+	d2rq:class time:Duration;
+	d2rq:classDefinitionLabel "duration";
+	.	
+map:duration_time a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:duration;
+	d2rq:property time:numericDuration;
+	d2rq:pattern "@@buceos_obs.duracion@@";
+	d2rq:datatype xsd:decimal;
+	.
+map:duration_unit a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:duration;
+	d2rq:property time:unitType;
+	d2rq:constantValue <http://www.w3.org/2006/time#unitMinute>;
+	.
+
+##################################################
+# Table individuo
+##################################################
+
+map:Platform a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "platform/@@individuo.claveU@@";
+	d2rq:class sosa:Platform;
+	d2rq:classDefinitionLabel "Platform";
+	.
+map:Platform__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Platform;
+	d2rq:property rdfs:label;
+	d2rq:pattern "SES ID-@@individuo.claveU@@";
+	.	
+map:Platform__comment a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Platform;	
+	d2rq:property rdfs:comment;
+	d2rq:pattern "Southern Elephant Seal (SES) identified with ID @@individuo.claveU@@";
+	d2rq:lang "en";
+	.	
+map:Platform_sexo a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Platform;
+	d2rq:property dwciri:sex;
+	d2rq:uriColumn "individuo.sexo";
+	.
+map:Platform_muerto a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Platform;
+	d2rq:property dwciri:lifeStage;
+	d2rq:uriColumn "individuo.muerto";
+	.
+###	
+### sosa:hosts
+###
+map:sosaHosts a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Platform;
+	d2rq:property sosa:hosts;
+	d2rq:refersToClassMap map:sensor;
+	d2rq:join "buceos_obs.claveU => individuo.claveU";
+	d2rq:limitInverse 0;
+	.
+################################################################################################## 
+##
+## 											Table idpapers
+##
+#################################################################################################
+
+
+map:Papers a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "paper/ID-@@idpapers.IDpapers@@";
+	d2rq:class fabio:Expression;
+    d2rq:class fabio:JournalArticle;
+	#d2rq:classDefinitionLabel "idpapers";
+	.
+map:idpapers_claveU__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Papers;
+	d2rq:property dc:references;
+	d2rq:refersToClassMap map:Platform;
+	d2rq:join "idpapers.claveU => individuo.claveU";
+	.
+################################################################################################## 
+##
+## 										Table publicaciones
+##
+#################################################################################################
+map:publicaciones a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "paper/ID-@@publicaciones.ID@@";
+	d2rq:class fabio:Expression;
+    d2rq:class fabio:JournalArticle;	
+	#d2rq:classDefinitionLabel "publicaciones";
+	.
+map:publicaciones_anio a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:publicaciones;
+	d2rq:property prism:publicationDate;
+	d2rq:propertyDefinitionLabel "publicaciones anio";
+	d2rq:column "publicaciones.anio";
+	d2rq:datatype xsd:gYear;
+	.
+map:publicaciones_titulo a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:publicaciones;
+	d2rq:property dc:title;
+	d2rq:propertyDefinitionLabel "publicaciones titulo";
+	d2rq:column "publicaciones.titulo";
+	.
+map:publicaciones_doi a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:publicaciones;
+	d2rq:property prism:doi;
+	d2rq:propertyDefinitionLabel "publicaciones doi";
+	d2rq:uriSqlExpression "CONCAT('http://dx.doi.org/', publicaciones.doi)";
+	.
+map:publicaciones_autores a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:publicaciones;
+	d2rq:property dc:creator;
+	d2rq:propertyDefinitionLabel "publicaciones autores";
+	d2rq:column "publicaciones.autores";
+	.
+map:publicaciones_abstractYmas a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:publicaciones;
+	d2rq:property dc:abstract;
+	d2rq:propertyDefinitionLabel "publicaciones abstractYmas";
+	d2rq:column "publicaciones.abstractYmas";
+	.
+map:publicaciones_tipoArchivo a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:publicaciones;
+	d2rq:property dc:format;
+	d2rq:propertyDefinitionLabel "publicaciones tipoArchivo";
+	d2rq:column "publicaciones.tipoArchivo";
+	.
+map:publicaciones_sameAs a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:publicaciones;
+	d2rq:property owl:sameAs;
+	d2rq:uriColumn "publicaciones.sameAs";
+	.
+################################################################################################## 
+##
+## 										Table categoria
+##
+#################################################################################################
+map:category a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "category/@@categoria.IDcategoria|urlify@@";
+	d2rq:class vocab:category;
+	d2rq:classDefinitionLabel "category";
+	.
+map:categoria_cateDesc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:category;
+	d2rq:property dwc:lifeStage;
+	d2rq:propertyDefinitionLabel "categoria cateDesc";
+	d2rq:column "categoria.cateDesc";
+	.
+map:categoria_reproductiva a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:category;
+	d2rq:property dwc:reproductiveCondition;
+	d2rq:propertyDefinitionLabel "categoria reproductiva";
+	d2rq:column "categoria.reproductiva";
+	.
+map:categoria_sexoc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:category;
+	d2rq:property dwc:sex;
+	d2rq:propertyDefinitionLabel "categoria sexoc";
+	d2rq:uriColumn "categoria.sexoc";
+	.
+
+################################################################################################## 
+##
+## 										Table censista
+##
+#################################################################################################
+
+map:censista a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "person/@@censista.IDcolaborador|urlify@@";
+	d2rq:class foaf:Person;
+	.
+map:censista_fecha a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:censista;
+	d2rq:property dwc:dateIdentified;
+	d2rq:column "censista.fecha";
+	d2rq:datatype xsd:date;
+	.
+
+################################################################################################## 
+##
+## 									Table colaborador
+##
+#################################################################################################
+map:colaborador a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "person/@@colaborador.IDcolaborador|urlify@@";
+	d2rq:class foaf:Person;
+	.
+map:colaborador_nombre a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:colaborador;
+	d2rq:property foaf:name;	
+	d2rq:pattern "@@colaborador.nombre@@ @@colaborador.apellido@@";
+	d2rq:datatype xsd:string;
+	.
+map:colaborador_email a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:colaborador;
+	d2rq:property foaf:mbox;
+	d2rq:uriPattern "mailto:@@colaborador.email@@";
+	.
+map:colaborador_sameAs a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:colaborador;
+	d2rq:property owl:sameAs;
+	d2rq:uriColumn "colaborador.sameAs";
+	.
+################################################################################################## 
+##
+## 									Table recuento
+##
+#################################################################################################
+
+map:Occurrence a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "occurrence/ID-@@recuento.recuentoID@@";
+	d2rq:class dwc:Occurrence;
+	d2rq:classDefinitionLabel "census";
+	.
+map:recuento_fecha a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Occurrence;
+	d2rq:property bigeonto:has_event;
+	d2rq:uriPattern "bioevent/ID-@@recuento.recuentoID@@";
+	d2rq:limitInverse 0;
+	.
+map:BioEvent a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "bioevent/ID-@@recuento.recuentoID@@";
+	d2rq:class bigeonto:BioEvent;
+	.	
+map:BioEvent_date a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:BioEvent;
+	d2rq:property dwc:eventDate;
+	d2rq:column "recuento.fecha";
+	d2rq:datatype xsd:date;
+	.	
+##
+## organism pattern
+map:recuento_organism a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Occurrence;
+	d2rq:property bigeonto:associated;
+	d2rq:uriPattern "organism/ID-@@recuento.recuentoID@@";
+	d2rq:limitInverse 0;
+	.
+map:Organism a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "organism/ID-@@recuento.recuentoID@@";
+	d2rq:class dwc:Organism;
+	.	
+map:recuento_org_taxon a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Organism;
+	d2rq:property bigeonto:belongsTo;
+	d2rq:uriPattern "taxon/mirounga_leonina";
+	d2rq:limitInverse 0;
+	.
+map:Taxon a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "taxon/mirounga_leonina";
+	d2rq:class dwc:Taxon;
+	.
+map:recuento_org_taxon_lsid a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Taxon;
+	d2rq:property dwc:taxonID;
+	d2rq:uriPattern "http://www.marinespecies.org/aphia.php?p=taxdetails&id=231413";
+	.
+map:taxonSameAswikidata a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Taxon;
+	d2rq:property owl:sameAs;
+	d2rq:uriPattern "https://www.wikidata.org/wiki/Q215343";
+	.
+map:taxonSameAsdbpedia a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Taxon;
+	d2rq:property owl:sameAs;
+	d2rq:uriPattern "http://dbpedia.org/resource/Southern_elephant_seal";
+	.
+map:recuento_categoria__ref2 a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap  map:BioEvent;
+	d2rq:property bigeonto:has_location;
+	d2rq:refersToClassMap map:Location;
+	d2rq:join "recuento.fecha => grupo.fecha";
+	d2rq:join "recuento.libreta => grupo.libreta";
+	d2rq:join "recuento.orden => grupo.orden";
+	d2rq:limitInverse 0;
+	.			
+map:recuento_sexo a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Occurrence;
+	d2rq:property dwciri:sex;
+	d2rq:propertyDefinitionLabel "recuento sexo";
+	d2rq:uriColumn "recuento.sexo";
+	.
+map:recuento_status a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Occurrence;
+	d2rq:property dwc:behavior;
+	d2rq:propertyDefinitionLabel "recuento status";
+	d2rq:column "recuento.status";
+	.
+map:recuento_cantidad a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Occurrence;
+	d2rq:property dwc:individualCount;
+	d2rq:propertyDefinitionLabel "recuento cantidad";
+	d2rq:column "recuento.cantidad";
+	d2rq:datatype xsd:integer;
+	.
+map:recuento_categoria__ref a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Occurrence;
+	d2rq:property dwciri:lifeStage;
+	d2rq:refersToClassMap map:category;
+	d2rq:join "recuento.categoria => categoria.IDcategoria";
+	d2rq:limitInverse 0;
+	.
+map:recuento_categoria__ref3 a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:BioEvent;
+	d2rq:property sosa:phenomenonTime;
+	d2rq:refersToClassMap map:IntervalCensus;
+	d2rq:join "recuento.fecha => sector.fecha";
+	d2rq:join "recuento.libreta => sector.libreta";
+	d2rq:limitInverse 0;
+	.	
+map:recuento_categoria__ref4 a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Occurrence;
+	d2rq:property dwciri:recordedBy;
+	d2rq:refersToClassMap map:censista;
+	d2rq:join "recuento.fecha => censista.fecha";
+	d2rq:join "recuento.libreta => censista.libreta";
+	d2rq:limitInverse 0;
+	.
+################################################################################################## 
+##
+## 									Table sector
+##
+#################################################################################################
+map:IntervalCensus a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "interval/on_@@sector.fecha@@_@@sector.horaInicio@@_@@sector.horaFin@@";
+	d2rq:class time:Interval;
+	d2rq:classDefinitionLabel "interval";
+	.
+map:sector_fecha_ini a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:IntervalCensus;
+	d2rq:property time:hasBeginning;
+	d2rq:uriPattern "instant/@@sector.fecha@@T@@sector.horaInicio@@";
+	d2rq:limitInverse 0;
+	.
+map:InstantBeginingCensus a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "instant/@@sector.fecha@@T@@sector.horaInicio@@";
+	d2rq:class time:Instant;
+	.	
+map:sector_fecha_ini_uri_time a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:InstantBeginingCensus;
+	d2rq:property time:inXSDDateTimeStamp;
+	d2rq:pattern "@@sector.fecha@@T@@sector.horaInicio@@";
+	d2rq:datatype xsd:dateTime;
+	.
+map:sector_fecha_fin a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:IntervalCensus;
+	d2rq:property time:hasEnd;
+	d2rq:uriPattern "instant/@@sector.fecha@@T@@sector.horaFin@@";
+	.
+map:InstantEndCensus a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "instant/@@sector.fecha@@T@@sector.horaFin@@";
+	d2rq:class time:Instant;
+	.
+map:sector_fecha_fin_uri_time a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:InstantEndCensus;
+	d2rq:property time:inXSDDateTimeStamp;
+	d2rq:pattern "@@sector.fecha@@T@@sector.horaFin@@";
+	d2rq:datatype xsd:dateTime;
+	.
+map:sector_zonaRecorrida a d2rq:PropertyBridge;
+    d2rq:belongsToClassMap map:IntervalCensus;
+    d2rq:property rdfs:comment;
+    d2rq:pattern "@@sector.zonaRecorrida@@, direccion: @@sector.direccionRecorrida@@, marea: @@sector.marea@@, clima: @@sector.clima@@ @@sector.comentario@@";
+    d2rq:lang "es";
+	.	
+################################################################################################## 
+##
+## 									Table grupo
+##
+#################################################################################################
+
+map:Location a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "geometry/point_@@grupo.longi@@_@@grupo.lati@@";
+	d2rq:class geo:Geometry;
+	d2rq:class dc:Location;
+	d2rq:classDefinitionLabel "grupo";
+	.
+map:Location_referencia a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Location;
+	d2rq:property dwc:behavior;
+	d2rq:propertyDefinitionLabel "grupo referencia";
+	d2rq:column "grupo.referencia";
+	.
+map:Location_tipoPlaya a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Location;
+	d2rq:property ro:BFO_0000066;
+	d2rq:uriPattern "sand/@@grupo.tipoPlaya|urlify@@";
+	.
+map:Location_sand a d2rq:ClassMap;
+	d2rq:dataStorage map:database;
+	d2rq:uriPattern "sand/@@grupo.tipoPlaya|urlify@@";
+	d2rq:class envo:ENVO_01000017;
+	d2rq:classDefinitionLabel "sand";
+	.	
+map:Location_geomTex a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Location;
+	d2rq:property geo:asWKT;
+	d2rq:pattern "POINT (@@grupo.longi@@ @@grupo.lati@@)";
+	d2rq:datatype geo:wktLiteral;
+	.
+map:Location_distancia a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Location;
+	d2rq:property vocab:grupo_distancia;
+	d2rq:propertyDefinitionLabel "grupo distancia";
+	d2rq:column "grupo.distancia";
+	d2rq:datatype xsd:integer;
+	.
+map:Location_comentario a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Location;
+	d2rq:property rdfs:comment;
+	d2rq:pattern "@@grupo.comentario@@";
+    d2rq:lang "es";
+	.	
+map:GeonamesSameAs a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap map:Location;
+	d2rq:property owl:sameAs;
+	d2rq:uriColumn "grupo.sameAs";
+	.
